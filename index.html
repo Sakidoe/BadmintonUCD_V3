@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Badminton Club @ UCD</title>
+    <meta name="description" content="Welcome to the Badminton Club at UC Davis!" />
+    <meta name="theme-color" content="#fff7ea" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta property="og:title" content="Badminton Club @ UCD" />
+    <meta property="og:description" content="Welcome to the Badminton Club at UC Davis!" />
+    <meta property="og:image" content="/img/team-2025.jpg" />
+  </head>
+  <body data-page="home">
+    <div data-mount="nav"></div>
+
+    <main>
+      <!-- ══════════════════════════════════════════════════════
+           Scroll Animation
+           ══════════════════════════════════════════════════════ -->
+      <section class="hero" aria-label="Intro">
+        <div class="hero__stage">
+          <!-- Banner photo: swap the file here to change the hero background -->
+          <div class="hero__bg" aria-hidden="true">
+            <img src="/img/hero-formal.jpg" alt="" fetchpriority="high" />
+          </div>
+          <div class="hero__veil" aria-hidden="true"></div>
+          <div class="hero__scene" aria-hidden="true"></div>
+          <div class="hero__fade" aria-hidden="true"></div>
+
+          <div class="hero__copy container">
+            <div class="hero__col">
+            <span class="kicker">Student Run Sports Club @ UCD</span>
+            <h1 class="hero__title">
+              <span class="word">The</span> <span class="word">Badminton Club</span> <span class="word">at</span>
+              <span class="word"><em>UC&nbsp;Davis</em></span>
+            </h1>
+            <p class="hero__lede">
+              [Exerpt]
+            </p>
+            <div class="btn-row hero__actions">
+              <a class="btn btn--gold btn--lg" href="/join.html" data-icon="arrow">[Button]</a>
+              <a class="btn btn--ghost btn--lg" href="/fall-open.html">Davis Fall Open</a>
+            </div>
+            </div>
+          </div>
+
+          <div class="hero__punch" aria-hidden="true">
+            <div class="container">
+              <div class="hero__col">
+              <h2>Open to all<br /><em>Students at UC Davis</em></h2>
+              <p class="hero__lede">
+                [Here is a short text blurb]
+              </p>
+              <div class="btn-row hero__actions">
+                <a class="btn btn--gold btn--lg" href="/join.html">[Button]</a>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__hint container">
+            <div class="hero__col">
+              <span class="hero__hint-line"></span>
+              Scroll to Play!
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION: STATS  (numbers from src/data/about.ts → stats)
+           ══════════════════════════════════════════════════════ -->
+      <section class="section section--after-hero" aria-label="Club at a glance">
+        <div class="container">
+          <div class="stats" data-mount="stats" data-stagger="90"></div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION: WHO WE ARE
+           ══════════════════════════════════════════════════════ -->
+      <section class="section section--tint section--ruled">
+        <div class="container split">
+          <div class="split__body" data-reveal="left">
+            <span class="kicker kicker--pink">[Kicker]</span>
+            <h2>[Section heading]</h2>
+            <p class="lede mt-4">
+              [Here is a long text blurb ]
+            </p>
+            <p class="lede">
+              [Here is a short text blurb]
+            </p>
+            <div class="btn-row mt-6">
+              <a class="btn" href="/about.html" data-icon="arrow">[Button]</a>
+              <a class="btn btn--ghost" href="/board.html">[Button]</a>
+            </div>
+          </div>
+          <div class="split__media" data-reveal="right">
+            <img src="/img/team-2024.jpg" alt="[Photo description]" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION: DAVIS FALL OPEN PROMO
+           Content from src/data/fallOpen.ts
+           ══════════════════════════════════════════════════════ -->
+      <section class="section" aria-label="Davis Fall Open">
+        <div class="container">
+          <div class="promo promo--fall" data-reveal="scale">
+            <img class="promo__mascot promo__mascot--left" src="/img/art/fall-cow.png" alt="" aria-hidden="true" loading="lazy" />
+            <img class="promo__mascot promo__mascot--right" src="/img/art/fall-croissant.png" alt="" aria-hidden="true" loading="lazy" />
+            <div>
+              <span class="promo__badge">Tournament · Save the date</span>
+              <h2 data-promo-title>Davis Fall Open</h2>
+              <p data-promo-tagline></p>
+              <div class="btn-row mt-6">
+                <a class="btn btn--gold btn--lg" href="/fall-open.html" data-icon="arrow">Tournament details</a>
+              </div>
+            </div>
+            <div class="promo__facts" data-mount="promo-facts"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION: WHAT WE DO  (events with featured:true)
+           ══════════════════════════════════════════════════════ -->
+      <section class="section section--dark section--ruled">
+        <div class="container">
+          <div class="section-head section-head--art" data-reveal>
+            <div>
+              <span class="kicker">[Kicker]</span>
+              <h2>[Section heading]</h2>
+              <p class="lede mt-4">[Here is a short text blurb]</p>
+            </div>
+            <img class="section-head__art" src="/img/art/moo-shuttle.png" alt="" aria-hidden="true" loading="lazy" />
+          </div>
+          <div class="cards" data-mount="featured-events" data-stagger="110"></div>
+          <div class="btn-row mt-7">
+            <a class="btn btn--gold" href="/events.html" data-icon="arrow">[Button]</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION: GALLERY  (first 6 photos from src/data/about.ts)
+           ══════════════════════════════════════════════════════ -->
+      <section class="section section--ruled">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="kicker kicker--pink">[Kicker]</span>
+            <h2>[Section heading]</h2>
+          </div>
+          <div class="gallery" data-mount="gallery" data-stagger="70"></div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION: JOIN CTA
+           ══════════════════════════════════════════════════════ -->
+      <section class="section section--blue section--ruled cta-band">
+        <div class="container cta-mascot" data-reveal>
+          <img src="/img/art/ko-cow.png" alt="The cow mascot, knocked out after a long rally" loading="lazy" />
+          <div>
+            <span class="kicker kicker--cream">[Kicker]</span>
+            <h2>[Big heading]</h2>
+            <p class="lede mt-4">[Here is a medium text blurb ]</p>
+            <div class="btn-row">
+              <a class="btn btn--gold btn--lg" href="/join.html" data-icon="arrow">[Button]</a>
+              <a class="btn btn--ghost btn--lg" href="#">[Button]</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div data-mount="footer"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

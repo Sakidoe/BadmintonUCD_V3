@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Events — [Club Name]</title>
+    <meta name="description" content="[Page description]" />
+    <meta name="theme-color" content="#022851" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+  <body data-page="events">
+    <div data-mount="nav"></div>
+
+    <main>
+      <!-- SECTION: PAGE HEADER -->
+      <header class="page-hero">
+        <div class="container">
+          <span class="kicker">[Kicker]</span>
+          <h1>[Page title]</h1>
+          <p class="lede">
+            [Here is a medium text blurb — one or two sentences that introduce this page.]
+          </p>
+        </div>
+      </header>
+
+      <!-- SECTION: PRACTICE SCHEDULE  (src/data/events.ts → practiceSchedule) -->
+      <section class="section section--blue">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="kicker">[Kicker]</span>
+            <h2>[Section heading]</h2>
+          </div>
+          <div class="schedule" data-mount="schedule" data-stagger="90"></div>
+        </div>
+      </section>
+
+      <!-- SECTION: DAVIS SPRING OPEN  (src/data/springOpen.ts) -->
+      <section class="section section--ruled" aria-label="[Promo]" id="spring-open">
+        <div class="container" data-mount="spring-open"></div>
+      </section>
+
+      <!-- SECTION: ALL EVENTS  (src/data/events.ts → events; each card opens event.html?e=slug) -->
+      <section class="section section--paper">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <span class="kicker">[Kicker]</span>
+            <h2>[Section heading]</h2>
+            <p class="lede mt-4">[Here is a short text blurb]</p>
+          </div>
+          <div class="cards" data-mount="events" data-stagger="90"></div>
+        </div>
+      </section>
+
+      <!-- SECTION: CTA -->
+      <section class="section section--navy-deep cta-band">
+        <div class="container" data-reveal>
+          <h2>[Call-to-action heading]</h2>
+          <div class="btn-row">
+            <a class="btn btn--gold btn--lg" href="/join.html">[Button]</a>
+            <a class="btn btn--ghost btn--lg" href="#">[Button]</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div data-mount="footer"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
