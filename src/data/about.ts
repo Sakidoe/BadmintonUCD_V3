@@ -28,19 +28,19 @@ export const goals: Goal[] = [
   {
     title: '[Goal one]',
     kicker: '[Kicker]',
-    body: '[Here is a medium text blurb — two sentences that describe this goal and why it matters to the club.]',
-    icon: 'heart',
+    body: 'Medium Text Block',
+    icon: 'trophy',
   },
   {
     title: '[Goal two]',
     kicker: '[Kicker]',
-    body: '[Here is a medium text blurb — two sentences that describe this goal and why it matters to the club.]',
-    icon: 'people',
+    body: 'Medium Text Block',
+    icon: 'trophy',
   },
   {
     title: '[Goal three]',
     kicker: '[Kicker]',
-    body: '[Here is a medium text blurb — two sentences that describe this goal and why it matters to the club.]',
+    body: 'Medium Text Block',
     icon: 'trophy',
   },
 ];

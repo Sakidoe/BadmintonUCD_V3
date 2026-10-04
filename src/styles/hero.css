@@ -247,6 +247,7 @@
 }
 
 /* Punchline sits on the un-washed photo: give the copy a soft cream halo */
+.hero__copy .hero__col,
 .hero__punch .hero__col {
   padding: var(--space-6);
   border-radius: var(--r-xl);
