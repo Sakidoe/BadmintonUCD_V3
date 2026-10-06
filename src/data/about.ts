@@ -9,12 +9,12 @@
 import type { IconName } from '../components/icons';
 
 export const mission =
-  '[Here is a medium text blurb — the mission statement, one or two sentences long.]';
+  '[To be the best badminton club ever]';
 
 export const intro = {
   kicker: '[Kicker]',
   heading: '[Section heading]',
-  body: '[Here is a long text blurb — a few sentences of body copy go here to show how a full paragraph wraps across the column. Swap in the real text when it is ready, and the layout will hold its shape.]',
+  body: '[block.]',
 };
 
 export interface Goal {

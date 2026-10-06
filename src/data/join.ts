@@ -31,7 +31,7 @@ export const dues = {
 };
 
 const body =
-  '[Here is a long text blurb — a few sentences explaining what this step involves, who it applies to and how to complete it.]';
+  '[block]';
 
 export const joinSteps: JoinStep[] = [
   {
