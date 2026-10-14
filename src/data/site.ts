@@ -12,10 +12,10 @@ export interface NavLink {
 }
 
 export const site = {
-  name: '[Club Name]',
-  shortName: '[CLUB]',
-  /** Used in <title> tags: "Page — [Club Name]" */
-  titleSuffix: '[Club Name]',
+  name: 'Badminton Club @ UC Davis',
+  shortName: 'BADC',
+  /** Used in <title> tags: "Page — Badminton Club @ UC Davis" */
+  titleSuffix: 'Badminton Club @ UC Davis',
   email: 'hello@example.com',
   /** Where we practice — shown in the footer and on the Events page. */
   practiceLocation: '[Location]',

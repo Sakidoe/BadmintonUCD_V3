@@ -67,10 +67,10 @@ export const fallOpen = {
   ] satisfies ScheduleItem[],
 
   faq: [
-    { q: 'Who can play?', a: 'The Davis Open is open to all players — college students and the wider community alike. Events are split by skill level so everyone gets competitive matches.' },
+    { q: 'Who can play?', a: 'The Davis Open is open to all players, college students and the wider community alike. Events are split by skill level so everyone gets competitive matches.' },
     { q: 'Do I need a partner?', a: 'For doubles and mixed, yes. Post in our Discord if you are looking for one — plenty of players are in the same boat.' },
     { q: 'Are birds provided?', a: 'Feather shuttles are provided for all matches.' },
-    { q: 'How do I get updates?', a: 'Follow @badminton_ucd on Instagram and join the Discord — every announcement goes there first.' },
+    { q: 'How do I get updates?', a: 'Follow @badminton_ucd on Instagram and join the Discord, every announcement goes there first.' },
   ] satisfies FaqItem[],
 
   /** Photos from previous Davis Opens, shown in the gallery strip */

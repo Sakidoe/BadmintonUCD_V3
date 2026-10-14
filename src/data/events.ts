@@ -29,10 +29,10 @@ export const practiceSchedule = {
   days: '[Days]',
   time: '[Time]',
   location: '[Location]',
-  note: '[Here is a medium text blurb — a sentence or two of practical notes about the weekly schedule.]',
+  note: '[Here is a medium text blurb a sentence or two of practical notes about the weekly schedule.]',
 };
 
-const blurb = '[Here is a medium text blurb — one or two sentences describing this event.]';
+const blurb = '[Here is a medium text blurb one or two sentences describing this event.]';
 
 export const events: ClubEvent[] = [
   { slug: 'weekly-practices', title: '[Event one]', meta: '[Short meta line]', description: blurb, icon: 'racket', photo: '/img/practice.jpg', featured: true },

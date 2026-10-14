@@ -21,7 +21,7 @@ export function mountFooter(): void {
               ${site.name}
             </div>
             <p class="mt-4">
-              [Here is a medium text blurb — one or two sentences about the club for the footer.]
+              [one or two sentences about the club for the footer.]
             </p>
             <div class="socials">
               <a href="${site.socials.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${icon('instagram')}</a>
