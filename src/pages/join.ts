@@ -14,14 +14,14 @@ export function init(): void {
     html`
       <div class="dues__item">
         <div class="dues__value">${dues.yearly}</div>
-        <div class="dues__label">[Short label]</div>
+        <div class="dues__label">Full year membership</div>
       </div>
       <div class="dues__item">
         <div class="dues__value">${dues.quarterly}</div>
-        <div class="dues__label">[Short label]</div>
+        <div class="dues__label">Single quarter</div>
       </div>
       <div class="dues__item">
-        <div class="dues__value">[Method]</div>
+        <div class="dues__value">Zelle / cash</div>
         <div class="dues__label">${dues.payTo}. ${dues.note}</div>
       </div>
     `,

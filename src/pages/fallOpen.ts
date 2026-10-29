@@ -25,7 +25,7 @@ export function init(): void {
       </div>
       <div class="promo__fact">
         <div class="promo__fact-label">${icon('pin')} Venue</div>
-        <div class="promo__fact-value">${fallOpen.venue}<br /><small style="font-weight:500;color:var(--on-dark-2)">${fallOpen.venueAddress}</small></div>
+        <div class="promo__fact-value"><a class="promo__fact-link" href="${fallOpen.venueMapUrl}" target="_blank" rel="noopener">${fallOpen.venue}${icon('external')}</a><br /><small style="font-weight:500;color:var(--ink-3)">${fallOpen.venueAddress}</small></div>
       </div>
       <div class="promo__fact">
         <div class="promo__fact-label">${icon('clock')} Register by</div>

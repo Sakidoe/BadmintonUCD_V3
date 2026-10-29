@@ -1,8 +1,8 @@
 {
-  "name": "site-template",
-  "version": "0.1.0",
+  "name": "ucdavis-badminton",
+  "version": "3.0.0",
   "private": true,
-  "description": "Barebones template of the ucdavisbadminton.com site — placeholder copy and photo boxes, cow hero kept",
+  "description": "Website for the Badminton Club at UC Davis — ucdavisbadminton.com",
   "type": "module",
   "scripts": {
     "dev": "vite",

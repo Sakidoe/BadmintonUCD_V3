@@ -27,20 +27,21 @@ export interface FaqItem {
 
 export const fallOpen = {
   /** Short name used in the nav button & cards */
-  name: 'Davis Fall Open',
+  name: 'Aggie Open',
   /** Big headline on the promo page */
-  headline: 'Davis Fall Open',
+  headline: 'Aggie Open',
   year: '2026',
   tagline: 'Northern California’s biggest collegiate badminton weekend is back.',
 
   // ── PLACEHOLDERS ──────────────────────────────────────────
-  date: 'Date TBA',                       // e.g. 'November 14–15, 2026'
-  venue: 'University Credit Union Center', // venue name
-  venueAddress: 'UC Davis, Davis, CA',     // e.g. '1 Shields Ave, Davis, CA 95616'
-  registrationOpen: false,                 // flip to true when live
-  registrationUrl: '#',                    // e.g. 'https://forms.gle/...'
-  registrationDeadline: 'TBA',             // e.g. 'November 1, 2026'
-  entryFee: 'TBA',                         // e.g. '$25 per event'
+  date: '11/14/2026-11/15/2026',        // e.g. 'November 14–15, 2026'
+  venue: 'Elite Badminton Center',         // venue name
+  venueAddress: '33540 Central Ave, Union City, CA 94587',
+  venueMapUrl: 'https://www.google.com/maps/place/Elite+Badminton+Center/@37.5931763,-122.0404831,17z/data=!3m1!4b1!4m6!3m5!1s0x808f954c291a78f7:0xae0f1ba2232116c5!8m2!3d37.5931763!4d-122.0379082!16s%2Fg%2F11jpxvx48z?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D', // Google Maps — venue name links here
+  registrationOpen: true,                 // flip to true when live
+  registrationUrl: 'https://www.tournamentsoftware.com/tournament/9CF3936E-F229-4A6B-9BAF-029715F36D92', // Tournament Software sign-up
+  registrationDeadline: 'November 8, 2026',             // e.g. 'November 1, 2026'
+  entryFee: '$35 for first event, $30 for each additional event',                         // e.g. '$25 per event'
   // ─────────────────────────────────────────────────────────
 
   /** Quick facts row under the headline */
@@ -53,38 +54,37 @@ export const fallOpen = {
 
   /** Event categories — update as the bracket list is finalised */
   categories: [
-    { name: 'Singles', detail: 'Men’s · Women’s — A / B / C / D' },
-    { name: 'Doubles', detail: 'Men’s · Women’s — A / B / C / D' },
-    { name: 'Mixed Doubles', detail: 'A / B / C / D' },
+    { name: 'Singles', detail: 'Men’s · Women’s — A / B / C / D (A/B may combine)' },
+    { name: 'Doubles', detail: 'Men’s · Women’s — A / B / C / D (A/B may combine)' },
+    { name: 'Mixed Doubles', detail: 'A / B / C / D (A/B may combine)' },
   ] satisfies FallOpenEventCategory[],
 
   /** Placeholder schedule — replace with real times */
   schedule: [
-    { time: 'Day 1 · Morning', title: 'Check-in & singles preliminaries' },
-    { time: 'Day 1 · Afternoon', title: 'Doubles preliminaries' },
-    { time: 'Day 2 · Morning', title: 'Mixed doubles & quarterfinals' },
-    { time: 'Day 2 · Afternoon', title: 'Semifinals, finals & awards' },
+    { time: 'Day 1 ', title: 'Singles and Mixed' },
+    { time: 'Day 2', title: 'Doubles' },
   ] satisfies ScheduleItem[],
 
   faq: [
-    { q: 'Who can play?', a: 'The Davis Open is open to all players — college students and the wider community alike. Events are split by skill level so everyone gets competitive matches.' },
-    { q: 'Do I need a partner?', a: 'For doubles and mixed, yes. Post in our Discord if you are looking for one — plenty of players are in the same boat.' },
-    { q: 'Are birds provided?', a: 'Feather shuttles are provided for all matches.' },
-    { q: 'How do I get updates?', a: 'Follow @badminton_ucd on Instagram and join the Discord — every announcement goes there first.' },
+    { q: 'Who can play?', a: 'The Davis Open is open to all players, hosted on Tournament Software' },
+    { q: 'Do I need a partner?', a: 'For doubles and mixed, yes.' },
+    { q: 'Are birds provided?', a: 'Feather shuttles are provided for A flight matches, else no.' },
+    { q: 'How do I get updates?', a: 'Follow @badminton_ucd on Instagram and join the Discord.' },
   ] satisfies FaqItem[],
 
   /** Photos from previous Davis Opens, shown in the gallery strip */
   gallery: [
-    { src: '/img/davis-open-1.jpg', alt: 'Player lunging for a shot at the Davis Open' },
-    { src: '/img/davis-open-bianca-justin.jpg', alt: 'Mixed doubles rally at the Davis Open' },
-    { src: '/img/davis-open-tiff.jpg', alt: 'Women’s singles at the Davis Open' },
-    { src: '/img/davis-open-steffi-josh.jpg', alt: 'Doubles jump smash at the Davis Open' },
-    { src: '/img/davis-open-charlie.jpg', alt: 'Trophy winners at the Davis Open' },
-    { src: '/img/davis-open-xin.jpg', alt: 'Singles rally at the Davis Open' },
-    { src: '/img/uc-center.jpg', alt: 'The University Credit Union Center set up for badminton' },
-    { src: '/img/davis-open-team.jpg', alt: 'Volunteers and organisers at the Davis Open' },
+    { src: '/img/davis_open/davis-open-1.jpg', alt: 'Player lunging for a shot at the Davis Open' },
+    { src: '/img/davis_open/davis-open-bianca-justin.jpg', alt: 'Mixed doubles rally at the Davis Open' },
+    { src: '/img/davis_open/davis-open-tiff.jpg', alt: 'Women’s singles at the Davis Open' },
+    { src: '/img/davis_open/davis-open-steffi-josh.jpg', alt: 'Doubles jump smash at the Davis Open' },
+    { src: '/img/davis_open/davis-open-charlie.jpg', alt: 'Trophy winners at the Davis Open' },
+    { src: '/img/davis_open/davis-open-xin.jpg', alt: 'Singles rally at the Davis Open' },
+    { src: '/img/davis_open/davis-open-team.jpg', alt: 'Volunteers and organisers at the Davis Open' },
   ],
 
   /** Sponsor logos — add { name, logo, href } entries when you have them */
-  sponsors: [] as { name: string; logo: string; href?: string }[],
+  sponsors: [
+    { name: 'HNDRD', logo: '/img/art/HNDRD_logo_2.jpg'}
+  ] as { name: string; logo: string; href?: string }[],
 };

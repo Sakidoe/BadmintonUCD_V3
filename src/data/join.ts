@@ -2,7 +2,7 @@
  * ─────────────────────────────────────────────────────────────
  *  JOINING THE CLUB
  *  Steps, deadlines and links for the Join page.
- *  Every [bracketed] string is a placeholder — replace it.
+ *  Update `schoolYear` and the deadlines every fall.
  * ─────────────────────────────────────────────────────────────
  */
 
@@ -21,37 +21,54 @@ export interface JoinStep {
   links?: JoinLink[];
 }
 
-export const schoolYear = '[Year]';
+export const schoolYear = '2026–2027';
 
 export const dues = {
-  yearly: '[$000]',
-  quarterly: '[$00]',
-  payTo: '[Here is a short text blurb]',
-  note: '[Short note]',
+  yearly: '$180 / year',
+  quarterly: '$75 / quarter',
+  payTo: 'Zelle to davisbadminton@gmail.com, or cash to a treasurer',
+  note: 'Dues are non-refundable.',
 };
-
-const body =
-  '[block]';
 
 export const joinSteps: JoinStep[] = [
   {
-    title: '[Step title]',
-    subtitle: '[Short subtitle]',
-    deadline: '[Deadline]',
-    body,
-    links: [{ label: '[Download link]', href: '/static/UCD_Physical.pdf', external: false }],
+    title: 'UCD Physical Form',
+    subtitle: 'Mandatory for all sport club members',
+    deadline: 'Before your first practice',
+    body: 'A completed physical form must be uploaded to DoSportsEasy. It can be completed by your primary care physician, another healthcare provider, or at the UC Davis Student Health Center.',
+    links: [{ label: 'Download the physical form', href: '/static/UCD_Physical.pdf', external: false }],
   },
-  { title: '[Step title]', subtitle: '[Short subtitle]', deadline: '[Deadline]', body },
   {
-    title: '[Step title]',
-    subtitle: '[Short subtitle]',
-    body,
+    title: 'Membership Dues',
+    subtitle: `${dues.yearly} or ${dues.quarterly}`,
+    deadline: 'Before your first practice',
+    body: `Membership is ${dues.yearly} or ${dues.quarterly}. ${dues.payTo}. ${dues.note}`,
+  },
+  {
+    title: 'Fusion Insurance',
+    subtitle: 'Required for every UC Davis sport club',
+    body: 'Log into your UC Davis Campus Recreation account, navigate to “Sport Club (Badminton)”, and pay the insurance fee. A fee waiver is available if you need it.',
     links: [
-      { label: '[External link]', href: '#' },
-      { label: '[External link]', href: '#' },
+      { label: 'Fusion insurance', href: 'https://rec.ucdavis.edu/' },
+      { label: 'Fee waiver', href: 'https://campusrecreation.ucdavis.edu/fee-waiver' },
     ],
   },
-  { title: '[Step title]', subtitle: '[Short subtitle]', body, links: [{ label: '[External link]', href: '#' }] },
-  { title: '[Step title]', subtitle: '[Short subtitle]', deadline: '[Deadline]', body, links: [{ label: '[External link]', href: '#' }] },
-  { title: '[Step title]', subtitle: '[Short subtitle]', body },
+  {
+    title: 'Team Policy Acknowledgement',
+    subtitle: 'Agree to the club conduct policy',
+    body: 'Every member signs the acknowledgement form to confirm they have read and agree to the club constitution and member responsibilities.',
+    links: [{ label: 'Acknowledgement form', href: 'https://forms.gle/FDYmvPhhVBPAFnF27' }],
+  },
+  {
+    title: 'DoSportsEasy Registration',
+    subtitle: 'Your official club membership',
+    deadline: 'Before your first practice',
+    body: 'Log in with your UC Davis account, scroll down to “Badminton”, and complete the registration.',
+    links: [{ label: 'DoSportsEasy', href: 'https://campusrecreation.ucdavis.edu/dosportseasy' }],
+  },
+  {
+    title: 'Questions?',
+    subtitle: 'We will help you find a way to play',
+    body: 'If dues or forms are a problem, reach out on Discord, Instagram, or by email. We will work something out so you can participate.',
+  },
 ];

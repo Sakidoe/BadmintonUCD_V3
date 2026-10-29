@@ -4,7 +4,6 @@
  */
 import { site, type NavLink } from '../data/site';
 import { html, $ } from '../lib/html';
-import { icon } from './icons';
 
 const isActive = (href: string): boolean => {
   const path = location.pathname.replace(/index\.html$/, '');
@@ -37,7 +36,8 @@ function template() {
           <span class="nav__cta-dot" aria-hidden="true"></span>
           <span class="nav__cta-label-long">${cta.label}</span>
           <span class="nav__cta-label-short">${cta.shortLabel}</span>
-          ${icon('shuttle')}
+          <img class="nav__cta-logo nav__cta-logo--full" src="/img/art/hndrd-wordmark-navy.png" alt="HNDRD" />
+          <img class="nav__cta-logo nav__cta-logo--mark" src="/img/art/hndrd-mark-navy.png" alt="" aria-hidden="true" />
         </a>
 
         <div class="nav__links" data-nav-group>

@@ -1,24 +1,25 @@
 /**
  * ─────────────────────────────────────────────────────────────
- *  SECOND PROMO BLOCK (purple poster on the Events page)
- *  Every [bracketed] string is a placeholder — replace it.
+ *  DAVIS SPRING OPEN — PROMO CONTENT
+ *  Shown as the blue poster block on the Events page.
+ *  ▶ Fill in the PLACEHOLDER values when details are set.
  * ─────────────────────────────────────────────────────────────
  */
 
 export const springOpen = {
-  name: '[Promo name]',
-  headline: '[Promo headline]',
-  year: '',
-  tagline: '[Here is a short text blurb for the promo]',
+  name: 'Davis Spring Open',
+  headline: 'Davis Spring Open',
+  year: '2026',
+  tagline: 'The spring edition of Northern California’s biggest collegiate badminton weekend.',
 
   // ── PLACEHOLDERS ──────────────────────────────────────────
-  date: '[Date]',
-  venue: '[Venue]',
+  date: 'Date TBA',                        // e.g. 'May 23–24, 2026'
+  venue: 'University Credit Union Center',
   registrationOpen: false,
   registrationUrl: '#',
   // ─────────────────────────────────────────────────────────
 
   /** MDX page slug (src/content/events/<slug>.mdx) */
   slug: 'davis-spring-open',
-  art: '/img/art/fall-open-poster.png',
+  art: '/img/art/spring-open-art-blue.png',
 };

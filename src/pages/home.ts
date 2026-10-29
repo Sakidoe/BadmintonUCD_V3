@@ -52,7 +52,7 @@ export function init(): void {
       </div>
       <div class="promo__fact">
         <div class="promo__fact-label">Where</div>
-        <div class="promo__fact-value">${fallOpen.venue}</div>
+        <div class="promo__fact-value"><a class="promo__fact-link" href="${fallOpen.venueMapUrl}" target="_blank" rel="noopener">${fallOpen.venue}${icon('external')}</a></div>
       </div>
       <div class="promo__fact">
         <div class="promo__fact-label">Events</div>
@@ -60,7 +60,9 @@ export function init(): void {
       </div>
       <div class="promo__fact">
         <div class="promo__fact-label">Registration</div>
-        <div class="promo__fact-value">${fallOpen.registrationOpen ? 'Open now' : 'Opening soon'}</div>
+        <div class="promo__fact-value">${fallOpen.registrationOpen && fallOpen.registrationUrl !== '#'
+          ? html`<a class="promo__fact-link" href="${fallOpen.registrationUrl}" target="_blank" rel="noopener">Register!${icon('external')}</a>`
+          : 'Opening soon'}</div>
       </div>`,
   );
   const promoTitle = document.querySelector('[data-promo-title]');
@@ -73,7 +75,7 @@ export function init(): void {
     'gallery',
     html`${gallery.slice(0, 6).map(
       (p) => html`
-        <figure class="gallery__item">
+        <figure class="gallery__item${p.shape ? ` gallery__item--${p.shape}` : ''}">
           <img src="${p.src}" alt="${p.alt}" loading="lazy" />
           ${p.caption ? html`<figcaption class="gallery__caption">${p.caption}</figcaption>` : ''}
         </figure>`,

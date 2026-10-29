@@ -246,7 +246,7 @@
   }
 }
 
-/* Punchline sits on the un-washed photo: give the copy a soft cream halo */
+/* Both headline blocks sit on the photo: give the copy a soft cream halo */
 .hero__copy .hero__col,
 .hero__punch .hero__col {
   padding: var(--space-6);
@@ -254,6 +254,8 @@
   background: radial-gradient(closest-side, rgba(255, 247, 234, 0.85), rgba(255, 247, 234, 0.55) 70%, rgba(255, 247, 234, 0));
 }
 
+.hero__copy .hero__title,
+.hero__copy .hero__lede,
 .hero__punch h2,
 .hero__punch .hero__lede {
   text-shadow: 0 0 14px var(--cream), 0 0 28px var(--cream);

@@ -12,18 +12,17 @@ export interface NavLink {
 }
 
 export const site = {
-  name: '[Club Name]',
-  shortName: '[CLUB]',
-  /** Used in <title> tags: "Page — [Club Name]" */
-  titleSuffix: '[Club Name]',
-  email: 'hello@example.com',
+  name: 'Badminton Club at UC Davis',
+  shortName: 'BUCD',
+  /** Used in <title> tags: "Page — Badminton Club at UC Davis" */
+  titleSuffix: 'Badminton Club at UC Davis',
+  email: 'davisbadminton@gmail.com',
   /** Where we practice — shown in the footer and on the Events page. */
-  practiceLocation: '[Location]',
 
   socials: {
-    instagram: '#',
-    discord: '#',
-    facebook: '#',
+    instagram: 'https://www.instagram.com/badminton_ucd/',
+    discord: 'https://discord.gg/bssTuRwBZx',
+    facebook: 'https://www.facebook.com/groups/ucdavisbadminton',
   },
 
   /** Left and right halves of the nav bar. The Fall Open button sits in the middle. */
@@ -38,11 +37,11 @@ export const site = {
   ] satisfies NavLink[],
 
   /** The highlighted centre button. `shortLabel` is used on phones. */
-  navCta: { label: 'Davis Fall Open', shortLabel: 'Fall Open', href: '/fall-open.html' },
+  navCta: { label: 'Aggie Open', shortLabel: 'Aggie Open', href: '/fall-open.html' },
 
   footer: {
     credit: 'Developed by Richard Huang',
     creditHref: 'https://www.linkedin.com/in/ridhuang/',
-    note: '[Here is a short footer note]',
+    note: 'With 💙 from the officers of the Badminton Club at UC Davis',
   },
 } as const;

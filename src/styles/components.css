@@ -218,42 +218,6 @@
   line-height: 1.65;
 }
 
-/* Cards on black blocks: lavender outline */
-.section--dark .card,
-.section--navy-deep .card {
-  background: var(--black);
-  border-color: var(--lavender);
-  color: var(--on-dark);
-  box-shadow: 5px 5px 0 var(--purple);
-}
-
-.section--dark .card:hover,
-.section--navy-deep .card:hover {
-  box-shadow: 8px 8px 0 var(--purple);
-}
-
-.section--dark .card__media,
-.section--navy-deep .card__media {
-  border-color: var(--lavender);
-}
-
-.section--dark .card p,
-.section--navy-deep .card p {
-  color: var(--on-dark-2);
-}
-
-.section--dark .card__meta,
-.section--navy-deep .card__meta {
-  color: var(--lavender);
-}
-
-.section--dark .card__icon,
-.section--navy-deep .card__icon {
-  background: var(--lavender);
-  border-color: var(--lavender);
-  color: var(--black);
-}
-
 /* Whole-card links (Events page) */
 .card--link {
   color: inherit;
@@ -292,20 +256,41 @@
   color: var(--ink-3);
 }
 
+/* Goal card mascot (replaces the small icon tile) — tilts alternate per card */
+.goal__art {
+  width: 3.75rem;
+  margin: var(--space-2) 0 var(--space-2);
+  transform: rotate(-6deg);
+  pointer-events: none;
+}
+
+.goal:nth-child(2) .goal__art {
+  transform: rotate(3deg);
+}
+
+.goal:nth-child(3) .goal__art {
+  transform: rotate(-2deg);
+}
+
 /* ── Photo gallery ──────────────────────────────────────── */
+/* Rows are a fine grid: 4 rows + 3 gaps = one standard tile height
+   (11rem phone / 13rem desktop), so tiles can also take in-between heights.
+   --g-boxy = rows used by the tall/wide frames (~4:5 portrait, ~3:2 landscape). */
 
 .gallery {
+  --g-boxy: 5;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 11rem;
+  grid-auto-rows: 2rem;
   grid-auto-flow: dense;
   gap: var(--space-4);
 }
 
 @media (min-width: 700px) {
   .gallery {
+    --g-boxy: 7;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 13rem;
+    grid-auto-rows: 2.5rem;
   }
 }
 
@@ -314,16 +299,34 @@
   overflow: hidden;
   border-radius: var(--r-md);
   margin: 0;
+  grid-row: span 4; /* standard tile */
+  /* Softer beige frame than the site's black sticker outline */
+  border-color: #a8916c;
+  box-shadow: 5px 5px 0 #a8916c;
   transition: transform var(--dur) var(--ease-spring);
 }
 
-.gallery__item:nth-child(6n + 1),
-.gallery__item:nth-child(6n + 4) {
+/* Photo 1 = big 2×2 tile, photo 4 = wide strip; everything else is standard
+   unless it has a shape */
+.gallery__item:nth-child(1),
+.gallery__item:nth-child(4) {
   grid-column: span 2;
 }
 
-.gallery__item:nth-child(6n + 1) {
-  grid-row: span 2;
+.gallery__item:nth-child(1) {
+  grid-row: span 8;
+}
+
+/* Frame overrides — set `shape: 'tall' | 'wide'` in src/data/about.ts.
+   Current set (9 + 10 tall, 11 wide) fills the grid with no gaps. */
+.gallery__item.gallery__item--tall {
+  grid-column: span 1;
+  grid-row: span var(--g-boxy);
+}
+
+.gallery__item.gallery__item--wide {
+  grid-column: span 2;
+  grid-row: span var(--g-boxy);
 }
 
 .gallery__item:hover {
@@ -359,6 +362,43 @@
 }
 
 /* Horizontal photo strip */
+/* Sponsor logos (Fall Open page) — small, centred row instead of a photo strip */
+.section--sponsors {
+  padding-block: var(--space-7);
+}
+
+.section--sponsors .section-head {
+  margin-bottom: var(--space-5);
+}
+
+.section--sponsors h2 {
+  font-size: var(--text-2xl);
+}
+
+.sponsors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.sponsors a {
+  display: block;
+  width: clamp(7rem, 14vw, 9.5rem);
+  transition: transform var(--dur) var(--ease-spring);
+}
+
+.sponsors a:hover {
+  transform: translateY(-3px) rotate(-2deg);
+}
+
+.sponsors img {
+  width: 100%;
+  height: auto;
+  mix-blend-mode: multiply; /* drops the logo's white JPG background onto the paper colour */
+}
+
 .strip {
   display: flex;
   gap: var(--space-4);
@@ -381,11 +421,6 @@
   overflow: hidden;
   scroll-snap-align: start;
   margin: 0;
-}
-
-.section--dark .strip__item {
-  border-color: var(--lavender);
-  box-shadow: 5px 5px 0 var(--purple);
 }
 
 .strip__item img {
@@ -623,7 +658,7 @@
   }
 }
 
-/* Dues panel (sits on a black block) */
+/* Dues panel (sits on a blue block) */
 .dues {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
@@ -633,20 +668,21 @@
 .dues__item {
   padding: var(--space-5);
   border-radius: var(--r-md);
-  border: var(--stroke) solid var(--lavender);
-  box-shadow: 5px 5px 0 var(--purple);
+  border: var(--stroke) solid var(--ink);
+  background: var(--paper);
+  box-shadow: var(--sticker-shadow);
 }
 
 .dues__value {
   font-size: var(--text-2xl);
   font-weight: 900;
-  color: var(--lavender);
+  color: var(--ink);
   letter-spacing: -0.02em;
 }
 
 .dues__label {
   font-size: var(--text-sm);
-  color: var(--on-dark-2);
+  color: var(--ink-2);
   margin-top: 0.25rem;
 }
 
@@ -710,7 +746,8 @@
   --promo-line: var(--rust);
   --promo-fg: var(--rust);
   --promo-title: var(--rust);
-  --promo-grid: rgba(139, 58, 31, 0.16);
+  --promo-grid: rgba(31, 37, 57, 0.07);
+  --promo-grid-w: 3px;
   --promo-shadow: var(--rust);
   --promo-badge-bg: var(--peach);
   --promo-badge-fg: var(--rust-2);
@@ -724,8 +761,8 @@
   border: var(--stroke) solid var(--promo-line);
   padding: clamp(2rem, 1.5rem + 3vw, 4rem);
   background:
-    linear-gradient(to right, var(--promo-grid) 3px, transparent 3px),
-    linear-gradient(to bottom, var(--promo-grid) 3px, transparent 3px),
+    linear-gradient(to right, var(--promo-grid) var(--promo-grid-w), transparent var(--promo-grid-w)),
+    linear-gradient(to bottom, var(--promo-grid) var(--promo-grid-w), transparent var(--promo-grid-w)),
     var(--promo-bg);
   background-size: 96px 96px, 96px 96px, auto;
   background-position: 24px 24px, 24px 24px, 0 0;
@@ -736,19 +773,19 @@
   align-items: center;
 }
 
-/* Spring Open — black & lavender, like the poster */
+/* Spring Open — pastel blue notebook poster (formerly black & lavender) */
 .promo--spring {
-  --promo-bg: var(--black);
-  --promo-line: var(--lavender);
-  --promo-fg: var(--lavender);
-  --promo-title: #fff;
-  --promo-grid: rgba(91, 61, 138, 0.55);
-  --promo-shadow: var(--purple);
-  --promo-badge-bg: var(--lavender);
-  --promo-badge-fg: var(--black);
-  --promo-fact-bg: rgba(11, 11, 11, 0.7);
-  --promo-btn-bg: var(--lavender);
-  --promo-btn-fg: var(--black);
+  --promo-bg: var(--blue-2);
+  --promo-line: var(--ink);
+  --promo-fg: var(--ink);
+  --promo-title: var(--ink);
+  --promo-grid: rgba(124, 189, 230, 0.35);
+  --promo-shadow: var(--ink);
+  --promo-badge-bg: var(--cream);
+  --promo-badge-fg: var(--ink);
+  --promo-fact-bg: rgba(255, 253, 248, 0.75);
+  --promo-btn-bg: var(--blue);
+  --promo-btn-fg: var(--ink);
 }
 
 @media (min-width: 900px) {
@@ -797,6 +834,17 @@
   box-shadow: 5px 5px 0 var(--promo-shadow);
 }
 
+/* Sign-up (Tournament Software link) — filled navy next to the peach details button */
+.promo .btn--signup {
+  --btn-bg: var(--rust);
+  --btn-fg: var(--peach-3);
+  box-shadow: 3px 3px 0 var(--peach);
+}
+
+.promo .btn--signup:hover {
+  box-shadow: 5px 5px 0 var(--peach);
+}
+
 .promo__facts {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -833,6 +881,27 @@
   margin-top: 0.15rem;
 }
 
+/* Venue name → Google Maps */
+.promo__fact-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+.promo__fact-link svg {
+  display: inline-block;
+  width: 0.85em;
+  height: 0.85em;
+  margin-left: 0.2em;
+  vertical-align: -0.05em;
+  transition: transform var(--dur) var(--ease-spring);
+}
+
+.promo__fact-link:hover svg {
+  transform: translate(2px, -2px);
+}
+
 /* Poster art gets its own column on wide screens */
 .promo__art {
   display: none;
@@ -852,43 +921,57 @@
   }
 }
 
-/* Fall poster: the logo's cow and croissant peek up from the bottom corners */
+/* Fall poster: Aggie Open 2026 artwork. Below 1360px it sits in the bottom
+   corners (the card reserves room for it); on wide screens each piece gets
+   its own side gutter, vertically centred. --art-w drives both. */
 .promo--fall {
-  padding-bottom: clamp(6rem, 4rem + 8vw, 10rem);
+  --art-w: clamp(7.5rem, 22vw, 11rem);
+  --promo-grid-w: 2px;
+  padding-bottom: calc(var(--art-w) * 1.25 + 2.5rem);
 }
 
 .promo__mascot {
   position: absolute;
-  bottom: -0.5rem;
-  width: clamp(9rem, 16vw, 15rem);
+  bottom: 1rem;
+  width: var(--art-w);
   pointer-events: none;
 }
 
 .promo__mascot--left {
-  left: 2%;
-  transform: rotate(-6deg);
+  left: 1rem;
+  transform: rotate(-5deg);
 }
 
 .promo__mascot--right {
-  right: 2%;
+  right: 1rem;
   transform: rotate(4deg);
 }
 
 @media (min-width: 900px) {
   .promo--fall {
     grid-template-columns: 1.1fr 1fr;
+  }
+}
+
+@media (min-width: 1360px) {
+  .promo--fall {
+    --art-w: clamp(9rem, 10.5vw, 10rem);
+    grid-template-columns: 1.2fr 1fr;
     padding-bottom: clamp(2rem, 1.5rem + 3vw, 4rem);
-    padding-inline: clamp(8rem, 10vw, 11rem);
+    padding-inline: calc(var(--art-w) + 2.5rem);
+    column-gap: var(--space-5);
   }
   .promo__mascot {
-    bottom: 0.5rem;
-    width: clamp(8rem, 10vw, 11rem);
+    top: 50%;
+    bottom: auto;
   }
   .promo__mascot--left {
-    left: 0.25rem;
+    left: 1.25rem;
+    transform: translateY(-50%) rotate(-5deg);
   }
   .promo__mascot--right {
-    right: 0.25rem;
+    right: 1.25rem;
+    transform: translateY(-50%) rotate(4deg);
   }
 }
 
@@ -979,8 +1062,8 @@
   gap: 0.35rem;
   padding: 0.1rem 0.55rem;
   border-radius: 6px;
-  border: 2px dashed var(--lavender);
-  color: var(--lavender);
+  border: 2px dashed var(--ink-3);
+  color: var(--ink-2);
   font-weight: 800;
 }
 
@@ -1084,8 +1167,8 @@
 /* ── Footer ─────────────────────────────────────────────── */
 
 .footer {
-  background: var(--black);
-  color: var(--on-dark);
+  background: var(--paper);
+  color: var(--ink);
   border-top: var(--stroke) solid var(--ink);
   padding-block: var(--space-8) var(--space-6);
 }
@@ -1107,14 +1190,14 @@
   gap: 0.75rem;
   font-weight: 900;
   font-size: var(--text-lg);
-  color: var(--lavender);
+  color: var(--ink);
 }
 
 .footer__brand .nav__brand-mark {
   width: 2.6rem;
   height: 2.6rem;
-  background: var(--paper);
-  border-color: var(--lavender);
+  background: var(--blue-2);
+  border-color: var(--ink);
 }
 
 .footer__brand .nav__brand-mark svg {
@@ -1123,7 +1206,7 @@
 }
 
 .footer p {
-  color: var(--on-dark-2);
+  color: var(--ink-2);
   font-size: var(--text-sm);
   max-width: 30rem;
 }
@@ -1133,7 +1216,7 @@
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--lavender);
+  color: var(--ink-3);
   margin-bottom: var(--space-4);
 }
 
@@ -1143,14 +1226,14 @@
 }
 
 .footer__links a {
-  color: var(--on-dark-2);
+  color: var(--ink-2);
   font-weight: 700;
   transition: color var(--dur-fast), transform var(--dur) var(--ease-spring);
   display: inline-block;
 }
 
 .footer__links a:hover {
-  color: #fff;
+  color: var(--ink);
   transform: translateX(4px);
 }
 
@@ -1166,14 +1249,14 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
-  border: var(--stroke-thin) solid var(--lavender);
-  color: var(--lavender);
+  border: var(--stroke-thin) solid var(--ink);
+  color: var(--ink);
   transition: background var(--dur-fast), transform var(--dur) var(--ease-spring), color var(--dur-fast);
 }
 
 .socials a:hover {
-  background: var(--lavender);
-  color: var(--black);
+  background: var(--blue);
+  color: var(--ink);
   transform: translateY(-3px) rotate(-6deg);
 }
 
@@ -1185,22 +1268,22 @@
 .footer__bottom {
   margin-top: var(--space-7);
   padding-top: var(--space-5);
-  border-top: 2px solid rgba(203, 195, 255, 0.25);
+  border-top: 2px solid var(--line);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--space-3);
   font-size: var(--text-xs);
-  color: var(--on-dark-2);
+  color: var(--ink-3);
 }
 
 .footer__bottom a {
-  color: var(--lavender);
+  color: var(--ink);
   font-weight: 700;
 }
 
 .footer__bottom a:hover {
-  color: #fff;
+  color: var(--blue-3);
 }
 
 /* Fact cards when they sit on a cream page header (Fall Open page) */

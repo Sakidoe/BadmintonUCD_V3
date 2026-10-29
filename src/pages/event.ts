@@ -9,7 +9,6 @@ import { springOpen } from '../data/springOpen';
 import { icon } from '../components/icons';
 import { html, mount } from '../lib/html';
 import { mdxComponents } from '../content/mdx-components';
-import { site } from '../data/site';
 
 interface Frontmatter {
   title?: string;
@@ -39,9 +38,9 @@ export async function init(): Promise<void> {
   if (!load) {
     mount(
       'event-hero',
-      html`<span class="kicker kicker--pink">[Not found]</span>
-        <h1>[Page heading]</h1>
-        <p class="lede">[Here is a short text blurb]</p>`,
+      html`<span class="kicker kicker--pink">Not found</span>
+        <h1>That event does not exist (yet).</h1>
+        <p class="lede">Pick one from the events page.</p>`,
     );
     return;
   }
@@ -53,7 +52,7 @@ export async function init(): Promise<void> {
   const subtitle = fm.subtitle ?? meta?.meta ?? (slug === springOpen.slug ? springOpen.tagline : '');
   const hero = fm.hero ?? meta?.photo;
 
-  document.title = `${title} — ${site.titleSuffix}`;
+  document.title = `${title} — Badminton Club at UC Davis`;
   mount(
     'event-hero',
     html`<span class="kicker">Event</span>

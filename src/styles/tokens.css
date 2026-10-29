@@ -1,7 +1,7 @@
 /* ─────────────────────────────────────────────────────────────
    DESIGN TOKENS — "sticker" style matched to the cow mascot art:
    cream fills, thick black outlines with a hard offset shadow,
-   pastel blue / pink accents, lavender-on-black for tournament promos.
+   pastel blue / pink accents. (Lavender/purple tokens kept for legacy rules.)
    ───────────────────────────────────────────────────────────── */
 
 :root {
@@ -19,12 +19,13 @@
   --pink-2: #ffdccf;
   --coral: #e8967f;
   --brown: #a8705b;
-  /* Fall Open — from the brown/peach logo */
-  --rust: #8b3a1f;
-  --rust-2: #6f2c15;
+  /* Fall Open — navy from the Aggie Open 26 shirt, peach/orange print accents (token names kept as --rust for compatibility) */
+  --rust: #1f2539;
+  --rust-2: #141829;
   --peach: #f2a97a;
   --peach-2: #fbe0cb;
   --peach-3: #fff1e4;
+  --red: #d6342a; /* "NEW!" ticker on the home page Fall Open band */
 
   /* Spring Open — from the purple poster */
   --lavender: #cbc3ff;

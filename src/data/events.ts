@@ -6,7 +6,6 @@
  *  `icon` is one of the keys in src/components/icons.ts.
  *  Each event links to /event.html?e=<slug>, rendered from
  *  src/content/events/<slug>.mdx — add a card here AND an .mdx file.
- *  Every [bracketed] string is a placeholder — replace it.
  * ─────────────────────────────────────────────────────────────
  */
 
@@ -24,30 +23,79 @@ export interface ClubEvent {
   featured?: boolean;
 }
 
-/** Weekly schedule — shown at the top of the Events page. */
+/** Weekly practice schedule — shown at the top of the Events page. Edit each quarter. */
 export const practiceSchedule = {
-  days: '[Days]',
-  time: '[Time]',
-  location: '[Location]',
-  note: '[Here is a medium text blurb — a sentence or two of practical notes about the weekly schedule.]',
+  days: 'Monday · Wednesday · Friday',
+  time: 'Evenings (times vary by quarter — check Discord)',
+  location: 'Hickey Gym',
+  note: 'Birds are provided. Courts are split by skill level and officers supervise play.',
 };
 
-const blurb = '[Here is a medium text blurb — one or two sentences describing this event.]';
-
 export const events: ClubEvent[] = [
-  { slug: 'weekly-practices', title: '[Event one]', meta: '[Short meta line]', description: blurb, icon: 'racket', photo: '/img/practice.jpg', featured: true },
-  { slug: 'school-meets', title: '[Event two]', meta: '[Short meta line]', description: blurb, icon: 'trophy', photo: '/img/collegiate-ding.jpg', featured: true },
-  { slug: 'bonding-events', title: '[Event three]', meta: '[Short meta line]', description: blurb, icon: 'heart', photo: '/img/boba-bonding.jpg', featured: true },
-  { slug: 'irvine-trip', title: '[Event four]', meta: '[Short meta line]', description: blurb, icon: 'car', photo: '/img/kickback.jpg' },
-  { slug: 'collegiate-nationals', title: '[Event five]', meta: '[Short meta line]', description: blurb, icon: 'flag', photo: '/img/boston-team.jpg' },
-  { slug: 'year-end-banquet', title: '[Event six]', meta: '[Short meta line]', description: blurb, icon: 'sparkle', photo: '/img/banquet-team.jpg' },
+  {
+    slug: 'weekly-practices',
+    title: 'Weekly Practices',
+    meta: 'Mon · Wed · Fri @ Hickey Gym',
+    description:
+      'Open-gym practices three times a week with courts for every skill level. Birds are provided and officers are on hand to supervise.',
+    icon: 'racket',
+    photo: '/img/team_photos/team-2025.jpg',
+    featured: true,
+  },
+  {
+    slug: 'school-meets',
+    title: 'School Meets',
+    meta: 'Home & away',
+    description:
+      'Several meets each quarter where our roster faces off against schools like SJSU, UCSC, Stanford and UC Berkeley in competitive matches for points.',
+    icon: 'trophy',
+    photo: '/img/meets/berkeley_2025_3.jpg',
+    featured: true,
+  },
+  {
+    slug: 'bonding-events',
+    title: 'Bonding Events',
+    meta: 'Every quarter',
+    description:
+      'From team trips to Irvine to weekly runs to boba outings, we prioritize any chance to make new memories together.',
+    icon: 'heart',
+    photo: '/img/team_bonding/picnic_2026.jpeg',
+    featured: true,
+  },
+  {
+    slug: 'irvine-trip',
+    title: 'Irvine Trip',
+    meta: 'Annual tradition',
+    description:
+      'A road trip to Irvine for the collegiate tournament, with coordinated travel, AirBnBs, food and a weekend of team bonding.',
+    icon: 'car',
+    photo: '/img/team_bonding/irvine_2022_team.jpg',
+  },
+  {
+    slug: 'collegiate-nationals',
+    title: 'Collegiate Nationals',
+    meta: 'USA Badminton Collegiate Championships',
+    description:
+      'We represent Northern California at Nationals, defending our regional titles. In 2026 the team finished 3rd in the country.',
+    icon: 'flag',
+    photo: '/img/boston/boston-team.jpg',
+  },
+  {
+    slug: 'year-end-banquet',
+    title: 'Year-End Banquet',
+    meta: 'Spring quarter',
+    description:
+      'Every year closes with a formal banquet to celebrate the season with catered food, awards, and a lot of photos.',
+    icon: 'sparkle',
+    photo: '/img/banquet/bucd_banquet_team.JPG',
+  },
   {
     slug: 'davis-open',
     title: 'Davis Open',
-    meta: 'Largest tournament in Northern California',
+    meta: 'One of the largest tournament in Northern California',
     description:
       'Our student-run tournament with 400+ entries across 20 events, hosted at the University Credit Union Center with 13 courts, trophies and cash prizes.',
     icon: 'shuttle',
-    photo: '/img/davis-open-team.jpg',
+    photo: '/img/davis_open/davis-open-xin.jpg',
   },
 ];

@@ -114,7 +114,7 @@ p {
 
 /* ── Backgrounds ────────────────────────────────────────── */
 
-/* Notebook grid in pastel blue (the poster has the same in purple) */
+/* Notebook grid in pastel blue */
 .grid-bg {
   background-color: var(--cream);
   background-image:
@@ -146,6 +146,76 @@ p {
   background: var(--cream-2);
 }
 
+/* Home page band behind the Aggie Open poster — photo of the UC Center arena,
+   faded under a light-navy wash so it sits back behind the card (raise/lower
+   the 0.6 alpha to show more/less photo). Ticker bars sit flush on its top and
+   bottom edges, so the padding moves inside. */
+.section--fall-navy {
+  background:
+    linear-gradient(rgba(215, 221, 234, 0.6), rgba(215, 221, 234, 0.6)),
+    #d7ddea url('/img/davis_open/uc-center.jpg') center / cover no-repeat;
+  padding-block: 0;
+}
+
+.section--fall-navy > .container {
+  padding-block: var(--section-y);
+}
+
+/* "NEW!" ticker — thin sticker-style tape that scrolls left → right */
+.ticker {
+  background: var(--paper);
+  border-block: var(--stroke) solid var(--ink);
+  overflow: hidden;
+  padding-block: 0.4rem;
+  user-select: none;
+}
+
+.ticker__track {
+  display: flex;
+  width: max-content;
+  animation: ticker-ltr 80s linear infinite;
+}
+
+.ticker__group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 1.1rem;
+  padding-right: 1.1rem;
+}
+
+.ticker__item {
+  color: var(--red);
+  font-size: var(--text-sm);
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.ticker__sep {
+  color: var(--rust);
+  font-size: 0.7rem;
+  line-height: 1;
+}
+
+/* Two identical groups: sliding by -50% → 0 loops seamlessly.
+   Each group must be wider than the viewport (32 items ≈ 2,700px). */
+@keyframes ticker-ltr {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker__track {
+    animation: none;
+  }
+}
+
 .section--blue {
   background: var(--blue-2);
 }
@@ -154,11 +224,21 @@ p {
   background: var(--paper);
 }
 
-/* Black block with lavender text — the tournament-poster look */
+/* Soft light-gray panel (About → mission) */
+.section--gray {
+  background: #f0efec;
+}
+
+/* Feature blocks + CTA bands — pastel blue panels (formerly black & lavender).
+   CTA bands get a ruled top edge to match the home page's "Ready to play?" band. */
 .section--dark,
 .section--navy-deep {
-  background: var(--black);
-  color: var(--on-dark);
+  background: var(--blue-2);
+  color: var(--ink);
+}
+
+.section--navy-deep {
+  border-top: var(--stroke) solid var(--ink);
 }
 
 /* Section right after the home hero: pull up so the hero's fade lands on it */
@@ -210,28 +290,25 @@ p {
   background: var(--cream);
 }
 
-.section--dark .kicker,
-.section--navy-deep .kicker {
-  background: var(--lavender);
-  border-color: var(--lavender);
-  color: var(--black);
-  box-shadow: 3px 3px 0 var(--purple);
+/* Bigger sticker label (About → "Our mission") */
+.kicker--lg {
+  font-size: var(--text-base);
+  padding: 0.55rem 1.4rem;
+  border-width: var(--stroke);
+  box-shadow: var(--sticker-shadow);
+  margin-bottom: var(--space-6);
 }
 
-.section--dark h2,
-.section--navy-deep h2 {
-  color: var(--lavender);
+/* Blue kicker would vanish on a blue panel — go cream */
+.section--dark .kicker,
+.section--navy-deep .kicker {
+  background: var(--cream);
 }
 
 .lede {
   font-size: var(--text-lg);
   color: var(--ink-2);
   max-width: 40rem;
-}
-
-.section--dark .lede,
-.section--navy-deep .lede {
-  color: var(--on-dark-2);
 }
 
 .mt-4 {
@@ -312,30 +389,6 @@ p {
   --btn-bg: var(--lavender);
 }
 
-/* On black blocks the outline goes lavender */
-.section--dark .btn,
-.section--navy-deep .btn {
-  border-color: var(--lavender);
-  box-shadow: 3px 3px 0 var(--purple);
-}
-
-.section--dark .btn:hover,
-.section--navy-deep .btn:hover {
-  box-shadow: 5px 5px 0 var(--purple);
-}
-
-.section--dark .btn--ghost,
-.section--navy-deep .btn--ghost {
-  --btn-bg: var(--black);
-  --btn-fg: var(--lavender);
-}
-
-.section--dark .btn--gold,
-.section--navy-deep .btn--gold {
-  --btn-bg: var(--lavender);
-  --btn-fg: var(--black);
-}
-
 .btn--lg {
   min-height: 3.5rem;
   padding: 0.9rem 1.9rem;
@@ -409,6 +462,21 @@ p {
   border-color: var(--rust);
   color: var(--rust-2);
   box-shadow: 3px 3px 0 var(--rust);
+}
+
+/* About page header — grads photo under a cream wash so the type stays readable
+   (raise/lower the 0.72 alpha to show less/more photo) */
+.page-hero--about {
+  background:
+    linear-gradient(rgba(255, 247, 234, 0.72), rgba(255, 247, 234, 0.72)),
+    var(--cream) url('/img/grads/about-hero-grads.jpg') center 35% / cover no-repeat;
+}
+
+/* Board page header — grads photo, same cream wash as the About header */
+.page-hero--board {
+  background:
+    linear-gradient(rgba(255, 247, 234, 0.72), rgba(255, 247, 234, 0.72)),
+    var(--cream) url('/img/grads/board-hero-grads.jpg') center 45% / cover no-repeat;
 }
 
 .page-hero h1 {

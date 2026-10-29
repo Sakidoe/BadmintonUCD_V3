@@ -156,6 +156,22 @@
   transition: transform var(--dur) var(--ease-spring);
 }
 
+/* HNDRD sponsor logo (navy copies of img/art/hndrd_logo_1.png).
+   Full wordmark on desktop, swoosh-only mark on phones. */
+.nav__cta-logo {
+  height: 0.7rem;
+  width: auto;
+  transition: transform var(--dur) var(--ease-spring);
+}
+
+.nav__cta-logo--mark {
+  display: none;
+}
+
+.nav__cta:hover .nav__cta-logo {
+  transform: translateX(2px) skewX(-8deg);
+}
+
 .nav__cta::before {
   /* shimmer sweep */
   content: '';
@@ -281,6 +297,15 @@
 
   .nav__cta-label-short {
     display: inline;
+  }
+
+  .nav__cta-logo--full {
+    display: none;
+  }
+
+  .nav__cta-logo--mark {
+    display: block;
+    height: 0.65rem;
   }
 
   .nav__burger {

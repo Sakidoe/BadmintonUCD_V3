@@ -21,7 +21,8 @@ export function mountFooter(): void {
               ${site.name}
             </div>
             <p class="mt-4">
-              [Here is a medium text blurb — one or two sentences about the club for the footer.]
+              One of the largest collegiate badminton clubs in the USA, open to all undergrads and grad students in UC Davis. 
+              3rd competitively in the nation, and the best place to meet friends who love this sport.
             </p>
             <div class="socials">
               <a href="${site.socials.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${icon('instagram')}</a>
@@ -32,18 +33,17 @@ export function mountFooter(): void {
           </div>
 
           <div>
-            <h4>[Heading]</h4>
+            <h4>Explore</h4>
             <div class="footer__links">
               ${links.map((l) => html`<a href="${l.href}">${l.label}</a>`)}
             </div>
           </div>
 
           <div>
-            <h4>[Heading]</h4>
+            <h4>Get in touch</h4>
             <div class="footer__links">
               <a href="mailto:${site.email}">${site.email}</a>
-              <a href="${site.socials.discord}" target="_blank" rel="noopener">[Link]</a>
-              <span style="color: var(--on-dark-2); font-size: var(--text-sm)">${site.practiceLocation}</span>
+              <a href="${site.socials.discord}" target="_blank" rel="noopener">Join the Discord</a>
             </div>
           </div>
         </div>
